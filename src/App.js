@@ -33,30 +33,63 @@ export default class App extends Component {
       modal: false,
       holidays: false,
       advent: false,
+      //This stores the entire JSON file from server.
+      series:[
+        {
+          title: 'no title',
+          subtitle: '',
+          text: '',
+          image: '',
+          services: [
+            {
+              title: '',
+              date: '',
+            }
+          ],
+        },
+      ],
+
     };
-
-    this.toggle = this.toggle.bind(this);
-    this.tHoliday = this.tHoliday.bind(this);
-    this.tAdvent = this.tAdvent.bind(this);
+    this.SortByDate = this.SortByDate.bind(this);
   }
 
-  toggle() {
-    this.setState({
-      modal: !this.state.modal
-    });
-  }
-  tHoliday() {
-    this.setState({
-      holidays: !this.state.holidays
-    });
-  }
-  tAdvent() {
-    this.setState({
-      advent: !this.state.advent
-    });
-  }
+  SortByDate(a, b) {
+        return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+    }
 
+componentDidMount(){
+  
+  fetch('https://hidden-brook-22839.herokuapp.com/series.json')
+   // fetch('http://192.168.43.129:3001/series.json')
+  .then(response => response.json())
+  .then(data => {
+    var seriesData = data.series;
+    seriesData.sort(this.SortByDate);
+    this.setState({series: seriesData});
+    
+    });
+  }
   render() {
+
+    let sermonCards = 
+    this.state.series.map((series, i) =>
+
+    <div>
+
+       <SermonCard
+       series={series}
+       title={this.state.series[i].title}
+       subtitle={this.state.series[i].subtitle}
+       text={this.state.series[i].text}
+       image={this.state.series[i].image}
+       services={this.state.series[i].services}
+       />
+
+    </div>
+
+    );
+
+
     return (
       <div className="App">
         <header className="App-header">
@@ -74,37 +107,12 @@ export default class App extends Component {
 
         </header>
         <div className="bg-gray">
+
           <Container>
             <Row>
 
-             <SermonCard
-             title="Living In The Middle"
-             subtitle=""
-             text="Pastor Demel talks about living between Christ's comings"
-             image={require('./img/middle.jpg')}
-             services={[['Living In The Middle',20180107],
-                        ]}
-             />
+            {sermonCards}
 
-            <SermonCard
-             title="Holiday Recordings"
-             subtitle="Christmas and New Year's Eve"
-             image={require('./img/holiday.jpg')}
-             services={[['Christmas Eve',20171224],
-                        ['New Year Eve',20171231],
-                        ]}
-             />  
-
-             <SermonCard
-             title="Advent-URE"
-             subtitle="Three Part Series on Advent"
-             text="Pastor Demel speaks on three aspects of Advent: Understand, Return, and Enjoy."
-             image={require('./img/adventure.jpeg')}
-             services={[['Part 1: Understanding',20171203],
-                        ['Part 2: Return',20171210],
-                        ['Part 3: Enjoy',20171217],
-                        ]}
-             />
 
             </Row>
           </Container>

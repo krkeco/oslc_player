@@ -31,9 +31,27 @@ export default class App extends Component {
       modal: false,
       holidays: false,
       advent: false,
+      service_urls: ['fake data'],
+      date: 'no date',
+
+        series:[
+        {
+          title: 'no title',
+          subtitle: '',
+          text: '',
+          image: '',
+          services: [
+            {
+              title: '',
+              date: '',
+            }
+          ],
+        },
+      ],
     };
 
     this.tHoliday = this.tHoliday.bind(this);
+    this.getUrl = this.getUrl.bind(this);
   }
 
   tHoliday() {
@@ -42,31 +60,27 @@ export default class App extends Component {
     });
   }
 
+  componentDidMount(){
+    this.setState({series: this.props.series});
+  }
+
+  getUrl(date){
+    return "https://oslcarcadia.com/sermons/" + date + "_sermon.mp3";
+  }
+
   render() {
     
     let sermons=[];
     let services=[];
         
     let service_view = 
-      this.props.services.map((service, i) =>
+      this.props.series.services.map((service, i) =>
          
-        <div>
-        <script>{services.push("https://oslcarcadia.com/sermons/" + this.props.services[i][1] + "_service.mp3")}
-        {sermons.push("https://oslcarcadia.com/sermons/" + this.props.services[i][1] + "_sermon.mp3")}
-      </script>
-          <h3>{this.props.services[i][0]}</h3>
-                  
-          <p className="small-font">Worship Service:</p>
-          <audio controls preload="none" className="audio">
-            <source src={services[i]} type="audio/mpeg"/>
-          </audio>
-
-          <p className="small-font">Sermon only:</p>
-          <audio controls preload="none" className="audio">
-            <source src={sermons[i]} type="audio/mpeg"/>
-          </audio>
-          <br/>
-        </div>
+       {
+                  {services.push("https://oslcarcadia.com/sermons/" + this.props.series.services[i].date + "_service.mp3")}
+                  {sermons.push("https://oslcarcadia.com/sermons/" + this.props.services[i].date + "_sermon.mp3")}
+               } 
+          
       );
 
     return (
@@ -83,7 +97,25 @@ export default class App extends Component {
 
                 <Collapse isOpen={this.state.holidays}>
               
-              {service_view}
+
+
+      {this.props.series.services.map((service, i) =>
+        <div>
+              <h3>{this.props.services[i].title}</h3>
+                  {this.props.services[i].date}
+          <p className="small-font">Worship Service:</p>
+          <audio controls preload="none" className="audio">
+            <source src={services[i]} type="audio/mpeg"/>
+          </audio>
+
+          <p className="small-font">Sermon only:</p>
+          <audio controls preload="none" className="audio">
+            <source src={sermons[i]} type="audio/mpeg"/>
+          </audio>
+          <br/>
+          <br/>
+          </div>
+          )}
 
                  
                 </Collapse>
