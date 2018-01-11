@@ -32,7 +32,13 @@
 
 .bg-gray {
   background-color: #828FA2 !important;
+  height: 100%;
+   }
+.bg-card {
+  background-color: #EEE !important;
    }
 .audio{
+  background-color: #EEEEEE;
+  border-radius: 300px;
   width: 100%;
 }
