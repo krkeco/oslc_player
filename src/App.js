@@ -34,20 +34,7 @@ export default class App extends Component {
       holidays: false,
       advent: false,
       //This stores the entire JSON file from server.
-      series:[
-        {
-          title: 'no title',
-          subtitle: '',
-          text: '',
-          image: '',
-          services: [
-            {
-              title: '',
-              date: '',
-            }
-          ],
-        },
-      ],
+      series: null,
 
     };
     this.SortByDate = this.SortByDate.bind(this);
@@ -71,23 +58,25 @@ componentDidMount(){
   }
   render() {
 
-    let sermonCards = 
+    let sermonCards = null;
+    if(this.state.series != null){
+      sermonCards =
     this.state.series.map((series, i) =>
 
-    <div>
 
        <SermonCard
-       series={series}
+       series={this.state.series}
        title={this.state.series[i].title}
        subtitle={this.state.series[i].subtitle}
        text={this.state.series[i].text}
        image={this.state.series[i].image}
        services={this.state.series[i].services}
+       service_url={this.state.series[i].services[0].date}
        />
 
-    </div>
 
     );
+  }
 
 
     return (
@@ -110,9 +99,8 @@ componentDidMount(){
 
           <Container>
             <Row>
-
+            
             {sermonCards}
-
 
             </Row>
           </Container>

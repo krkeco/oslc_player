@@ -34,20 +34,6 @@ export default class App extends Component {
       service_urls: ['fake data'],
       date: 'no date',
 
-        series:[
-        {
-          title: 'no title',
-          subtitle: '',
-          text: '',
-          image: '',
-          services: [
-            {
-              title: '',
-              date: '',
-            }
-          ],
-        },
-      ],
     };
 
     this.tHoliday = this.tHoliday.bind(this);
@@ -61,7 +47,7 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    this.setState({series: this.props.series});
+    // this.setState({date: this.props.services[0].title});
   }
 
   getUrl(date){
@@ -69,24 +55,8 @@ export default class App extends Component {
   }
 
   render() {
-    
-    let sermons=[];
-    let services=[];
-        
-    let service_view = 
-      this.props.series.services.map((service, i) =>
-         
-       {
-                  {services.push("https://oslcarcadia.com/sermons/" + this.props.series.services[i].date + "_service.mp3")}
-                  {sermons.push("https://oslcarcadia.com/sermons/" + this.props.services[i].date + "_sermon.mp3")}
-               } 
-          
-      );
-
-    return (
-
-            <Col xs={{size:10, offset:1}} className="card-container">
-              <Card  onClick={this.tHoliday} className="bg-card">
+    let card =
+     <Card  onClick={this.tHoliday} className="bg-card">
                 <CardBody>
                   <CardTitle>{this.props.title}</CardTitle>
                   <CardSubtitle>{this.props.subtitle}</CardSubtitle>
@@ -99,23 +69,22 @@ export default class App extends Component {
               
 
 
-      {this.props.series.services.map((service, i) =>
+      {this.props.services.map((service, i) => 
         <div>
-              <h3>{this.props.services[i].title}</h3>
-                  {this.props.services[i].date}
+          <h3>{this.props.services[i].title}</h3>
           <p className="small-font">Worship Service:</p>
           <audio controls preload="none" className="audio">
-            <source src={services[i]} type="audio/mpeg"/>
+            <source src={"https://oslcarcadia.com/sermons/"+this.props.services[i].date +"_service.mp3"} type="audio/mpeg"/>
           </audio>
 
           <p className="small-font">Sermon only:</p>
           <audio controls preload="none" className="audio">
-            <source src={sermons[i]} type="audio/mpeg"/>
+            <source src={"https://oslcarcadia.com/sermons/"+this.props.services[i].date +"_sermon.mp3"} type="audio/mpeg"/>
           </audio>
           <br/>
           <br/>
-          </div>
-          )}
+        </div>
+      )}
 
                  
                 </Collapse>
@@ -125,7 +94,12 @@ export default class App extends Component {
                 </Collapse>
 
                 </CardBody>
-              </Card>
+              </Card>;
+
+    return (
+
+            <Col xs={{size:10, offset:1}} className="card-container">
+             {card}
               </Col>
 
     );
