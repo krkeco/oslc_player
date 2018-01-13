@@ -58,7 +58,7 @@ componentDidMount(){
   }
   render() {
 
-    let sermonCards = null;
+    let sermonCards = <div className="bg-proxy"/>;
     if(this.state.series != null){
       sermonCards =
     this.state.series.map((series, i) =>
@@ -95,7 +95,7 @@ componentDidMount(){
           <title>OSLCArcadia</title>
 
         </header>
-        <div className="bg-gray">
+        <body className="bg-gray">
 
           <Container>
             <Row>
@@ -104,7 +104,7 @@ componentDidMount(){
 
             </Row>
           </Container>
-        </div>
+        </body>
       </div>
     );
   }
