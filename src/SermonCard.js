@@ -38,6 +38,7 @@ export default class App extends Component {
 
     this.tHoliday = this.tHoliday.bind(this);
     this.getUrl = this.getUrl.bind(this);
+   this.parseDate = this.parseDate.bind(this);
   }
 
   tHoliday() {
@@ -47,21 +48,31 @@ export default class App extends Component {
   }
 
   componentDidMount(){
-    // this.setState({date: this.props.services[0].title});
+    // this.setState({date: this.props.services[0].date});
   }
 
   getUrl(date){
     return "https://oslcarcadia.com/sermons/" + date + "_sermon.mp3";
   }
 
+  parseDate(date){
+  	return date.slice(4,6) + "/" + date.slice(6,8) + "/" + date.slice(0,4);
+  }
+
   render() {
+
+  const componentClasses = ['example-component'];
+  if (this.state.holidays) { componentClasses.push('show'); }
+  
+
     let card =
      <Card  onClick={this.tHoliday} className="bg-card">
                 <CardBody>
                   <CardTitle>{this.props.title}</CardTitle>
                   <CardSubtitle>{this.props.subtitle}</CardSubtitle>
-                  <CardImg width="50%" src={this.props.image} alt="Card image cap" />
+                  <img  src={this.props.image} className={componentClasses.join(' ')} alt="Card image cap" />
                 
+    <div className={componentClasses.join(' ')}></div>
                   <CardText>{this.props.text}</CardText>
 
 
@@ -71,7 +82,7 @@ export default class App extends Component {
 
       {this.props.services.map((service, i) => 
         <div>
-          <h3>{this.props.services[i].title}</h3>
+          <h3>{this.props.services[i].title} -- {this.parseDate(this.props.services[i].date)}</h3>
           <p className="small-font">Worship Service:</p>
           <audio controls preload="none" className="audio">
             <source src={"https://oslcarcadia.com/sermons/"+this.props.services[i].date +"_service.mp3"} type="audio/mpeg"/>

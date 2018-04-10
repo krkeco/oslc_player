@@ -38,10 +38,14 @@ export default class App extends Component {
 
     };
     this.SortByDate = this.SortByDate.bind(this);
+   this.SortByDateString = this.SortByDateString.bind(this);
   }
 
   SortByDate(a, b) {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+    }
+  SortByDateString(a, b) {
+        return b.date - a.date;
     }
 
 componentDidMount(){
@@ -52,35 +56,45 @@ componentDidMount(){
   .then(data => {
     var seriesData = data.series;
     seriesData.sort(this.SortByDate);
+
+    seriesData.map((series, i) =>
+      series.services.sort(this.SortByDateString)
+    );
+
     this.setState({series: seriesData});
     
     });
+
   }
   render() {
+    let sermonCards = <Col className="bg-proxy" xs="12">
+      <img 
+      src={require('./img/loading.png')} 
+      className="loader" 
+      alt="logo" />
+      <p>Loading, Please wait</p>
+      </Col>;
 
-    let sermonCards = <div className="bg-proxy"/>;
     if(this.state.series != null){
       sermonCards =
-    this.state.series.map((series, i) =>
+        this.state.series.map((series, i) =>
 
+         <SermonCard
+         series={this.state.series}
+         title={this.state.series[i].title}
+         subtitle={this.state.series[i].subtitle}
+         text={this.state.series[i].text}
+         image={this.state.series[i].image}
+         services={this.state.series[i].services}
+         service_url={this.state.series[i].services[0].date}
+         />
 
-       <SermonCard
-       series={this.state.series}
-       title={this.state.series[i].title}
-       subtitle={this.state.series[i].subtitle}
-       text={this.state.series[i].text}
-       image={this.state.series[i].image}
-       services={this.state.series[i].services}
-       service_url={this.state.series[i].services[0].date}
-       />
-
-
-    );
-  }
+      );
+    }
 
 
     return (
-      <div className="App">
+      <div className="App bg-gray">
         <header className="App-header">
           <a href='https://oslcarcadia.com'>
             <img 
@@ -88,14 +102,14 @@ componentDidMount(){
               className="App-logo" 
               alt="logo" />
           </a>
-          <h1 className="App-title">Sermon only Recordings</h1>
+          <h1 className="App-title">Sermon Recordings</h1>
           <script src="bundle.js"></script>
           <link rel="shortcut icon" type="image/x-icon" href={logo} />
     
           <title>OSLCArcadia</title>
 
         </header>
-        <body className="bg-gray">
+        <div className="bg-gray">
 
           <Container>
             <Row>
@@ -104,7 +118,7 @@ componentDidMount(){
 
             </Row>
           </Container>
-        </body>
+        </div>
       </div>
     );
   }
