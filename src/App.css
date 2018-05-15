@@ -66,10 +66,8 @@
 }
 
 .example-component {
-  width: 45em;
-  max-width: 90%;
-  height:30em;
-  max-height: 90%;
+  width: 45vw;
+  height:30vw;
   border-radius:1em;
   opacity: 1;
 
@@ -80,9 +78,7 @@
 }
 .example-component.show {
   width: 15em;
-  max-width: 30%;
   height:10em;
-  max-height: 30%;
   border-radius:1em;
   opacity: 1;
 
@@ -90,4 +86,8 @@
   -moz-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
+}
+.bulletin{
+  width:718px; 
+  height:700px;
 }

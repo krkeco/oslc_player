@@ -22,7 +22,7 @@ import {
   Col,
   Row, } from 'reactstrap';
 
-import SermonCard from './SermonCard.js'
+import SermonCard from './SermonCard.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -66,7 +66,54 @@ componentDidMount(){
     });
 
   }
+
+
+
+
+  onDocumentComplete = (pages) => {
+    this.setState({ page: 1, pages });
+  }
+
+  onPageComplete = (page) => {
+    this.setState({ page });
+  }
+
+  handlePrevious = () => {
+    this.setState({ page: this.state.page - 1 });
+  }
+
+  handleNext = () => {
+    this.setState({ page: this.state.page + 1 });
+  }
+
+  renderPagination = (page, pages) => {
+    let previousButton = <li className="previous" onClick={this.handlePrevious}><a href="#"><i className="fa fa-arrow-left"></i> Previous</a></li>;
+    if (page === 1) {
+      previousButton = <li className="previous disabled"><a href="#"><i className="fa fa-arrow-left"></i> Previous</a></li>;
+    }
+    let nextButton = <li className="next" onClick={this.handleNext}><a href="#">Next <i className="fa fa-arrow-right"></i></a></li>;
+    if (page === pages) {
+      nextButton = <li className="next disabled"><a href="#">Next <i className="fa fa-arrow-right"></i></a></li>;
+    }
+    return (
+      <nav>
+        <ul className="pager">
+          {previousButton}
+          {nextButton}
+        </ul>
+      </nav>
+      );
+  }
+
+
+
   render() {
+
+let pagination = null;
+    if (this.state.pages) {
+      pagination = this.renderPagination(this.state.page, this.state.pages);
+    }
+
     let sermonCards = <Col className="bg-proxy" xs="12">
       <img 
       src={require('./img/loading.png')} 
@@ -110,6 +157,7 @@ componentDidMount(){
 
         </header>
         <div className="bg-gray">
+
 
           <Container>
             <Row>
