@@ -1,8 +1,6 @@
 import React, { Component, Linking } from 'react';
 
 import logo from './img/full.svg';
-import adventure from './img/adventure.jpeg';
-import holiday from './img/holiday.jpg';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -29,21 +27,21 @@ export default class App extends Component {
     super(props);
     this.state = {
       modal: false,
-      holidays: false,
+      collapse_toggle: false,
       advent: false,
       service_urls: ['fake data'],
       date: 'no date',
 
     };
 
-    this.tHoliday = this.tHoliday.bind(this);
+    this.collapseToggle = this.collapseToggle.bind(this);
     this.getUrl = this.getUrl.bind(this);
    this.parseDate = this.parseDate.bind(this);
   }
 
-  tHoliday() {
+  collapseToggle() {
     this.setState({
-      holidays: !this.state.holidays
+      collapse_toggle: !this.state.collapse_toggle
     });
   }
 
@@ -62,50 +60,50 @@ export default class App extends Component {
   render() {
 
   const componentClasses = ['example-component'];
-  if (this.state.holidays) { componentClasses.push('show'); }
+  if (this.state.collapse_toggle) { componentClasses.push('show'); }
   
 
     let card =
-     <Card  onClick={this.tHoliday} className="bg-card">
-                <CardBody>
-                  <CardTitle>{this.props.title}</CardTitle>
-                  <CardSubtitle>{this.props.subtitle}</CardSubtitle>
-                  <img  src={this.props.image} className={componentClasses.join(' ')} alt="Card image cap" />
-                
-    <div className={componentClasses.join(' ')}></div>
-                  <CardText>{this.props.text}</CardText>
+     <Card  onClick={this.collapseToggle} className="bg-card">
+      <CardBody>
+        <CardTitle>{this.props.title}</CardTitle>
+        <CardSubtitle>{this.props.subtitle}</CardSubtitle>
+        <img  src={this.props.image} className={componentClasses.join(' ')} alt="Card image cap" />
+      
+        <div className={componentClasses.join(' ')}></div>
+        <CardText>{this.props.text}</CardText>
 
 
-                <Collapse isOpen={this.state.holidays}>
-              
+        <Collapse isOpen={this.state.collapse_toggle}>
+      
 
 
-      {this.props.services.map((service, i) => 
-        <div>
-          <h3>{this.props.services[i].title} -- {this.parseDate(this.props.services[i].date)}</h3>
-          <p className="small-font">Worship Service:</p>
-          <audio controls preload="none" className="audio">
-            <source src={"https://oslcarcadia.com/sermons/"+this.props.services[i].date +"_service.mp3"} type="audio/mpeg"/>
-          </audio>
+          {this.props.services.map((service, i) => 
+            <div>
+              <h3>{this.props.services[i].title} -- {this.parseDate(this.props.services[i].date)}</h3>
+              <h4>{this.props.services[i].speaker}</h4>
+              <p className="small-font">Worship Service:</p>
+              <audio controls preload="none" className="audio">
+                <source src={"https://oslcarcadia.com/sermons/"+this.props.services[i].date +"_service.mp3"} type="audio/mpeg"/>
+              </audio>
 
-          <p className="small-font">Sermon only:</p>
-          <audio controls preload="none" className="audio">
-            <source src={"https://oslcarcadia.com/sermons/"+this.props.services[i].date +"_sermon.mp3"} type="audio/mpeg"/>
-          </audio>
-          <br/>
-          <br/>
-        </div>
-      )}
+              <p className="small-font">Sermon only:</p>
+              <audio controls preload="none" className="audio">
+                <source src={"https://oslcarcadia.com/sermons/"+this.props.services[i].date +"_sermon.mp3"} type="audio/mpeg"/>
+              </audio>
+              <br/>
+              <a href={"https://oslcarcadia.com/bulletins/"+this.props.services[i].date +".pdf"} >Bulletin</a>
+              <br/>
+            </div>
+          )}
+        </Collapse>
 
-                 
-                </Collapse>
+        <Collapse isOpen={!this.state.collapse_toggle}>
+          <CardText>click to view series</CardText>
+        </Collapse>
 
-                <Collapse isOpen={!this.state.holidays}>
-                  <CardText>click to view series</CardText>
-                </Collapse>
-
-                </CardBody>
-              </Card>;
+      </CardBody>
+    </Card>;
 
     return (
 

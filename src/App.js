@@ -1,8 +1,6 @@
 import React, { Component, Linking } from 'react';
 
 import logo from './img/full.svg';
-import adventure from './img/adventure.jpeg';
-import holiday from './img/holiday.jpg';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -50,9 +48,11 @@ export default class App extends Component {
 
 componentDidMount(){
   
-  fetch('https://hidden-brook-22839.herokuapp.com/series.json')
+  fetch(
+    // 'https://blooming-shelf-43028.herokuapp.com/series.json'
+    'https://hidden-brook-22839.herokuapp.com/series.json'
    // fetch('http://192.168.43.129:3001/series.json')
-  .then(response => response.json())
+  ).then(response => response.json())
   .then(data => {
     var seriesData = data.series;
     seriesData.sort(this.SortByDate);

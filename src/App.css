@@ -66,8 +66,10 @@
 }
 
 .example-component {
-  width: 90%;
-  height: 90%;
+  width: 45em;
+  max-width: 90%;
+  height:30em;
+  max-height: 90%;
   border-radius:1em;
   opacity: 1;
 
@@ -77,8 +79,10 @@
   transition: 0.5s;
 }
 .example-component.show {
-  width: 30%;
-  height: 30%;
+  width: 15em;
+  max-width: 30%;
+  height:10em;
+  max-height: 30%;
   border-radius:1em;
   opacity: 1;
 
