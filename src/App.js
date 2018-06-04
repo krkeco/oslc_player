@@ -33,16 +33,17 @@ export default class App extends Component {
       advent: false,
       //This stores the entire JSON file from server.
       series: null,
+      show: 3,
 
     };
-    this.SortByDate = this.SortByDate.bind(this);
-   this.SortByDateString = this.SortByDateString.bind(this);
+   //  this.SortByDate = this.SortByDate.bind(this);
+   // this.SortByDateString = this.SortByDateString.bind(this);
   }
 
-  SortByDate(a, b) {
+  SortByDate = (a, b) => {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
     }
-  SortByDateString(a, b) {
+  SortByDateString = (a, b) => {
         return b.date - a.date;
     }
 
@@ -67,8 +68,13 @@ componentDidMount(){
 
   }
 
+increaseShow = () => {
+	this.setState({show: this.state.show +3});
+}
 
-
+toggleShowAll = () => {
+	this.setState({showAll: !this.state.showAll});
+}
 
   onDocumentComplete = (pages) => {
     this.setState({ page: 1, pages });
@@ -124,18 +130,19 @@ let pagination = null;
 
     if(this.state.series != null){
       sermonCards =
-        this.state.series.map((series, i) =>
-
-         <SermonCard
-         series={this.state.series}
-         title={this.state.series[i].title}
-         subtitle={this.state.series[i].subtitle}
-         text={this.state.series[i].text}
-         image={this.state.series[i].image}
-         services={this.state.series[i].services}
-         service_url={this.state.series[i].services[0].date}
-         />
-
+        this.state.series.map((series, i) =>{
+        	if(i < this.state.show){
+		        return <SermonCard
+		         series={this.state.series}
+		         title={this.state.series[i].title}
+		         subtitle={this.state.series[i].subtitle}
+		         text={this.state.series[i].text}
+		         image={this.state.series[i].image}
+		         services={this.state.series[i].services}
+		         service_url={this.state.series[i].services[0].date}
+		        />
+	      	}
+        }
       );
     }
 
@@ -163,6 +170,8 @@ let pagination = null;
             <Row>
             
             {sermonCards}
+
+            <Button align="center" large onClick={this.increaseShow}>Show More</Button>
 
             </Row>
           </Container>

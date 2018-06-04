@@ -99,17 +99,22 @@ export default class SermonCard extends Component {
 
 
           {this.props.services.map((service, i) => {
-
-            let bulletin = "http://docs.google.com/gview?url=https://oslcarcadia.com/bulletins/" + this.props.services[i].date + ".pdf&embedded=true";
-                    
-          
-            return <ServiceInfo
-                    title={this.props.services[i].title}
-                    speaker={this.props.services[i].speaker}
-                    date={this.props.services[i].date}
-                    bulletin={bulletin}
-                    />
+            let haveBulletin = true;
+            if(this.props.title == "Confirmation"){
+              haveBulletin = false;
+            }
+            if(this.state.collapse_toggle){
+              let bulletin = "http://docs.google.com/gview?url=https://oslcarcadia.com/bulletins/" + this.props.services[i].date + ".pdf&embedded=true";
             
+              return <ServiceInfo
+                      isOpen={this.props.collapse_toggle}
+                      title={this.props.services[i].title}
+                      speaker={this.props.services[i].speaker}
+                      date={this.props.services[i].date}
+                      bulletin={bulletin}
+                      haveBulletin={haveBulletin}
+                      />}
+  
          } )}
         </Collapse>
 
