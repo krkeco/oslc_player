@@ -127,7 +127,7 @@ export default class SermonCard extends Component {
 
     return (
 
-            <Col xs={{size:10, offset:1}} className="card-container">
+            <Col xs="12" md={{size:10, offset:1}} className="card-container">
              {card}
               </Col>
 
