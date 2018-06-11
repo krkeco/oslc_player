@@ -171,7 +171,7 @@ let pagination = null;
             
             {sermonCards}
 
-            <Button align="center" large onClick={this.increaseShow}>Show More</Button>
+            <Button align="center" large color="success" onClick={this.increaseShow}>Show More</Button>
 
             </Row>
           </Container>
