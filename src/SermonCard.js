@@ -94,7 +94,7 @@ export default class SermonCard extends Component {
         <CardText>{this.props.text}</CardText>
         </div>
 
-        <Collapse isOpen={this.state.collapse_toggle}>
+        <Collapse isOpen={this.state.collapse_toggle} >
       
 
 
@@ -104,7 +104,9 @@ export default class SermonCard extends Component {
               haveBulletin = false;
             }
             if(this.state.collapse_toggle){
-              let bulletin = "http://docs.google.com/gview?url=https://oslcarcadia.com/bulletins/" + this.props.services[i].date + ".pdf&embedded=true";
+              let bulletin = //"http://docs.google.com/gview?url=
+              "https://oslcarcadia.com/bulletins/" + this.props.services[i].date +".pdf";
+              //+ ".pdf&embedded=true";
             
               return <ServiceInfo
                       isOpen={this.props.collapse_toggle}
@@ -118,7 +120,7 @@ export default class SermonCard extends Component {
          } )}
         </Collapse>
 
-        <Collapse isOpen={!this.state.collapse_toggle}>
+        <Collapse isOpen={!this.state.collapse_toggle}  >
           <CardText onClick={this.collapseToggle}>click to view series</CardText>
         </Collapse>
 

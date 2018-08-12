@@ -22,6 +22,8 @@ import {
   Col,
   Row, } from 'reactstrap';
 
+import {ReactReader} from 'react-reader';
+
 
 
 export default class ServiceInfo extends Component {
@@ -122,7 +124,8 @@ return false;
     let bulletinButton = null;
     if(this.props.date >= 20180520
       && this.props.haveBulletin){
-      bulletinButton =  <Button onClick={this.bulletinToggle}>Click to View Bulletin</Button>;
+      bulletinButton =  <a href={this.props.bulletin}>Download Bulletin</a>;
+    //<Button onClick={this.bulletinToggle}>Click to View Bulletin</Button>;
     }
 
 
@@ -140,7 +143,7 @@ return false;
     }
     
     if(this.state.sermon){
-      sermon = <div>
+      sermon = <div >
         <p className="small-font">Sermon only:</p>
         <audio controls preload="none" className="audio">
           <source src={this.state.sermonSound} type="audio/mpeg"/>
@@ -150,7 +153,8 @@ return false;
 
     return (
 
-      <div>
+      <div >
+
         <div onClick={this.collapseToggle}>
           <h3>{this.props.title} -- {this.parseDate(this.props.date)}</h3>
           <h4>{this.props.speaker}</h4>
@@ -164,7 +168,7 @@ return false;
          {bulletinButton}
         </Collapse>
 
-        <Collapse isOpen={this.state.bulletin_toggle}>
+        <Collapse isOpen={this.state.bulletin_toggle} >
           <Button onClick={this.bulletinToggle}>Click to Collapse</Button>
           <iframe src={this.props.bulletin} className="bulletin" frameborder="0"></iframe>
           <Button onClick={this.bulletinToggle}>Click to Collapse</Button>

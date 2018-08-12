@@ -24,6 +24,9 @@ import {
 
 import SermonCard from './SermonCard.js';
 
+import BulletinReader from './BulletinReader.js';
+
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -124,7 +127,7 @@ let pagination = null;
       <img 
       src={require('./img/loading.png')} 
       className="loader" 
-      alt="logo" />
+      alt="loading" />
       <p>Loading, Please wait</p>
       </Col>;
 
@@ -149,21 +152,29 @@ let pagination = null;
 
     return (
       <div className="App bg-gray">
-        <header className="App-header">
-          <a href='https://oslcarcadia.com'>
-            <img 
-              src={logo} 
-              className="App-logo" 
-              alt="logo" />
-          </a>
-          <h1 className="App-title">Sermon Recordings</h1>
-          <script src="bundle.js"></script>
-          <link rel="shortcut icon" type="image/x-icon" href={logo} />
-    
-          <title>OSLCArcadia</title>
+        <header>
 
+          <div className="App-header">
+
+               
+
+            <h1 className="App-title">Sermon Recordings</h1>
+
+            <title className="App-title">OSLCArcadia</title>
+            
+            <a href='https://oslcarcadia.com'>
+              <div className="App-logo-container">
+               <img className="App-logo"
+                src={require('./img/full.png')} 
+                
+                alt="logo" />
+              </div>
+            </a>
+
+          </div>
         </header>
-        <div className="bg-gray">
+        <div className="bg-gray offset-top">
+
 
 
           <Container>
