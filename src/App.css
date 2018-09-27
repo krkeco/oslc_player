@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: futura_md_btmedium;
 }
 
 .App-logo {
@@ -12,6 +13,34 @@
   top: 10px;
 }
 
+
+@font-face {
+    font-family: 'futura_md_btmedium';
+    src: /*url('https://www.oslcarcadia.com/font/futura/futura_medium_bt-webfont.woff2') format('woff2'),
+         url('https://www.oslcarcadia.com/font/futura/futura_medium_bt-webfont.woff') format('woff'),*/
+         url('/font/futura_medium_bt.tff') format('tff'),
+         url('./font/futura/futura_medium_bt-webfont.woff2') format('woff2'),
+         url('./font/futura/futura_medium_bt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: /*url('https://www.oslcarcadia.com/font/raleway/raleway-thin-webfont.woff2') format('woff2'),
+         url('https://www.oslcarcadia.com/font/raleway/raleway-thin-webfont.woff') format('woff'),*/
+         url('/font/raleway-thin-webfont.tff') format('tff'),
+         url('./font/raleway/raleway-thin-webfont.woff2') format('woff2'),
+         url('./font/raleway/raleway-thin-webfont.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+
+}
+.loader-text{
+  font-family: raleway;
+  font-size: 18px;
+}
 .loader {
     position: absolute;
     top: 20%;
@@ -19,6 +48,7 @@
     width: 120px;
     height: 120px;
     margin:-60px 0 0 -60px;
+    
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
@@ -42,8 +72,10 @@
 
 .App-title {
   top: 5;
-  font-size: 2em;
+  font-size: 1.5em;
   color: #828FA2;
+  font-family: futura_md_btmedium;
+  font-size: 28px;
 }
 .small-font {
   font-size: .7em;

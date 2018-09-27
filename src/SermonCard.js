@@ -1,6 +1,5 @@
 import React, { Component, Linking } from 'react';
 
-import logo from './img/full.svg';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';

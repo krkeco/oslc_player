@@ -1,6 +1,5 @@
 import React, { Component, Linking } from 'react';
 
-import logo from './img/full.svg';
 import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -128,7 +127,7 @@ let pagination = null;
       src={require('./img/loading.png')} 
       className="loader" 
       alt="loading" />
-      <p>Loading, Please wait</p>
+      <div className="loader-text">Loading, Please wait</div>
       </Col>;
 
     if(this.state.series != null){
