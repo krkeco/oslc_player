@@ -40,7 +40,7 @@ export default class ServiceInfo extends Component {
       sermonSound: null,
     };
 
-   this.parseDate = this.parseDate.bind(this);
+   // this.parseDate = this.parseDate.bind(this);
    this.UrlExists = this.UrlExists.bind(this);
   }
 
@@ -84,7 +84,7 @@ export default class ServiceInfo extends Component {
   
   }
 
-  parseDate(date){
+  parseDate = (date) => {
   	return date.slice(4,6) + "/" + date.slice(6,8) + "/" + date.slice(0,4);
   }
 
@@ -123,7 +123,7 @@ return false;
     let bulletinButton = null;
     if(this.props.date >= 20180520
       && this.props.haveBulletin){
-      bulletinButton =  <a href={this.props.bulletin}>Download Bulletin</a>;
+      bulletinButton =  <a className="bulletin-text" href={this.props.bulletin}>Download Bulletin</a>;
     //<Button onClick={this.bulletinToggle}>Click to View Bulletin</Button>;
     }
 
@@ -144,6 +144,7 @@ return false;
     if(this.state.sermon){
       sermon = <div >
         <p className="small-font">Sermon only:</p>
+
         <audio controls preload="none" className="audio">
           <source src={this.state.sermonSound} type="audio/mpeg"/>
         </audio>
@@ -155,8 +156,21 @@ return false;
       <div >
 
         <div onClick={this.collapseToggle}>
-          <h3>{this.props.title} -- {this.parseDate(this.props.date)}</h3>
-          <h4>{this.props.speaker}</h4>
+          <Row>
+            <Col xs="12">
+              <h3>
+                {this.props.title}
+              </h3> 
+            </Col>
+          </Row>
+          <Row >
+            <Col xs="12" auto>
+              <div className="service-info-subtitle">
+                {this.props.speaker} -- {this.parseDate(this.props.date)}
+              </div>
+            </Col>
+          </Row>
+          <br/>
 
          {service}
          {sermon}
