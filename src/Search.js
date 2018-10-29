@@ -26,7 +26,13 @@ export default class Search extends Component {
 
     let outputFilter = [];
     this.props.inputArray.map((item, index) => {
-      let params = (item.title + " " + item.speaker);
+      
+      let params = (item.title + " " + item.speaker + " " + item.date);
+      
+      if(this.props.appType == "music"){
+        params = (item.content + " " + item.group + " " + item.date);
+      }
+
       if(params.toUpperCase().indexOf(filter) > -1 ){
         outputFilter.push(item);
       }
@@ -65,18 +71,20 @@ export default class Search extends Component {
     let searchList = null;
 
 
-    // if(this.props.inputArray != null){
-    //   propsList =
-    //   this.props.inputArray.map((item, index) => {
+    if(this.props.inputArray != null){
+      propsList =
+      this.props.inputArray.map((item, index) => {
 
-    //     return <div><a href="#">
-    //     {item.title} {item.speaker} 
-    //     </a>
+        return <div><a href="#">
+        props {item.title} {item.speaker} 
+        </a>
         
-    //     </div>
+        </div>
 
-    //   });
-    // }    
+      });
+    }   else{
+      propsList = "tis null";
+    } 
 
  if(this.state.filterArray != null){
       searchList =
@@ -85,7 +93,6 @@ export default class Search extends Component {
         return <div><a href="#">
         {item.title} {item.speaker} 
         </a>
-        
         </div>
 
       });
@@ -94,17 +101,19 @@ export default class Search extends Component {
     //   this.filter();
     // }
 
-    //    <div id="myMenu">
-    //  <div>statelist</div>
-    //  {searchList}
-    //  <div>propslist</div>
-    //  {propsList}
-      
+    // <div id="myMenu">
+    //   <div>statelist</div>
+    //   {searchList}
+    //   <div>propslist</div>
+    //   {propsList}
     // </div>  
+      
 
     return (
     <div className="search-container">
-          <input type="text" id="mySearch" onKeyUp={() => {this.filter()}} placeholder="Search.." title="Type in a category"/>
+          <input type="text" id="mySearch" style={{width: '100%'}} onKeyUp={() => {this.filter()}} placeholder="Search.." title="Type in a category"/>
+    
+
     </div>
     );
   }

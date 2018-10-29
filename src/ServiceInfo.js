@@ -170,7 +170,6 @@ return false;
               </div>
             </Col>
           </Row>
-          <br/>
 
          {service}
          {sermon}

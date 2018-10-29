@@ -33,17 +33,18 @@
   height: 50px;
 }
 
+.search-container {
+  /*position: fixed;*/
+  left: 10px;
+  top: 25px;
+}
+
 .App-logo-container {
   position: fixed;
   right: 10px;
   top: 10px;
 }
 
-.search-container {
-  position: fixed;
-  left: 10px;
-  top: 25px;
-}
 
 .loader-text{
   font-family: raleway;
@@ -79,7 +80,6 @@
 }
 
 .App-title {
-  top: 5;
   font-size: 1.5em;
   color: 'white';
   font-family: futura_md_btmedium;
@@ -109,6 +109,7 @@
 .bg-gray {
   background-color: #828FA2 !important;
   height:100%;
+  min-height: 100vh;
    }
 .bg-proxy {
   background-color: #828FA2 !important;
