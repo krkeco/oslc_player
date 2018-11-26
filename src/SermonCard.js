@@ -95,8 +95,6 @@ export default class SermonCard extends Component {
 
         <Collapse isOpen={this.state.collapse_toggle} >
       
-
-
           {this.props.services.map((service, i) => {
             let haveBulletin = true;
             if(this.props.title == "Confirmation"){
@@ -108,6 +106,7 @@ export default class SermonCard extends Component {
               //+ ".pdf&embedded=true";
             
               return <ServiceInfo
+                      appType={this.props.appType}
                       isOpen={this.props.collapse_toggle}
                       title={this.props.services[i].title}
                       speaker={this.props.services[i].speaker}

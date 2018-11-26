@@ -24,6 +24,16 @@
 
 }
 
+
+:root {
+    --main-gray: #626F82; 
+    --dark-gray: #525f72; 
+    /*implement this please*/
+    --flat-white: #F5FCFF;
+
+}
+
+
 .App {
   text-align: center;
   font-family: futura_md_btmedium;
@@ -45,6 +55,14 @@
   top: 10px;
 }
 
+.recordingCard {
+  background-color: var(--main-gray);
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  margin-bottom: -60px;
+}
 
 .loader-text{
   font-family: raleway;
@@ -163,7 +181,8 @@
 }
 .service-info-subtitle{
   font-family: raleway;
-  font-size: 18px;
+  font-size: 20px;
+  color: white;
 }
 .sermon-card{
   visibility: visible;

@@ -1,0 +1,616 @@
+{
+    "series": [
+        {
+            "id": 7,
+            "title": "Easter Season 2018",
+            "subtitle": "",
+            "text": "\r\n",
+            "image": "https://oslcarcadia.com/img/appimages/april.jpg",
+            "created_at": "2018-04-09T21:25:37.341Z",
+            "updated_at": "2018-04-09T21:25:37.341Z",
+            "services": [
+                {
+                    "id": 30,
+                    "title": "That's My Boy",
+                    "date": "20180429",
+                    "created_at": "2018-04-30T20:53:29.373Z",
+                    "updated_at": "2018-04-30T20:53:29.373Z",
+                    "speaker": "Deacon Michael Powers"
+                },
+                {
+                    "id": 29,
+                    "title": "Jesus- The Only Way",
+                    "date": "20180422",
+                    "created_at": "2018-04-23T19:31:38.788Z",
+                    "updated_at": "2018-04-30T20:58:15.085Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 28,
+                    "title": "Something's Missing",
+                    "date": "20180415",
+                    "created_at": "2018-04-16T22:11:21.571Z",
+                    "updated_at": "2018-04-30T20:58:51.046Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 27,
+                    "title": "Doubt, Faith, and Confession",
+                    "date": "20180408",
+                    "created_at": "2018-04-09T22:03:26.478Z",
+                    "updated_at": "2018-04-30T20:59:20.208Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 26,
+                    "title": "Easter Day",
+                    "date": "20180401",
+                    "created_at": "2018-04-09T21:25:54.466Z",
+                    "updated_at": "2018-04-30T20:59:29.335Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 31,
+                    "title": "Who's In?  Who's Out?",
+                    "date": "20180506",
+                    "created_at": "2018-05-07T22:24:32.426Z",
+                    "updated_at": "2018-05-07T22:24:32.426Z",
+                    "speaker": "Pastor Albert Chai"
+                },
+                {
+                    "id": 33,
+                    "title": "Seven Qualities for Moms and For All",
+                    "date": "20180513",
+                    "created_at": "2018-05-15T01:07:49.068Z",
+                    "updated_at": "2018-05-15T01:08:25.707Z",
+                    "speaker": "Pastor Mark Demel"
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/7.json"
+        },
+        {
+            "id": 8,
+            "title": "Confirmation",
+            "subtitle": "",
+            "text": "",
+            "image": "\t\t\thttps://oslcarcadia.com/img/appimages/luther-rose.jpg",
+            "created_at": "2018-05-22T22:33:53.327Z",
+            "updated_at": "2018-05-22T22:33:53.327Z",
+            "services": [
+                {
+                    "id": 34,
+                    "title": "Confirmation Ceremony Service",
+                    "date": "201805201045",
+                    "created_at": "2018-05-22T22:34:47.837Z",
+                    "updated_at": "2018-05-22T22:35:29.888Z",
+                    "speaker": ""
+                },
+                {
+                    "id": 35,
+                    "title": "Joseph's Testimony",
+                    "date": "201805131",
+                    "created_at": "2018-05-22T22:36:13.429Z",
+                    "updated_at": "2018-05-22T22:36:13.429Z",
+                    "speaker": ""
+                },
+                {
+                    "id": 36,
+                    "title": "Cesar's Testimony",
+                    "date": "201804221",
+                    "created_at": "2018-05-22T22:37:17.647Z",
+                    "updated_at": "2018-05-22T22:37:17.647Z",
+                    "speaker": ""
+                },
+                {
+                    "id": 37,
+                    "title": "Lauren's Testimony",
+                    "date": "201804291",
+                    "created_at": "2018-05-22T22:38:09.830Z",
+                    "updated_at": "2018-05-22T22:38:09.830Z",
+                    "speaker": ""
+                },
+                {
+                    "id": 38,
+                    "title": "Gunnar's Testimony",
+                    "date": "201804292",
+                    "created_at": "2018-05-22T22:39:15.610Z",
+                    "updated_at": "2018-05-22T22:39:15.610Z",
+                    "speaker": ""
+                },
+                {
+                    "id": 39,
+                    "title": "Ethan's Testimony",
+                    "date": "201805132",
+                    "created_at": "2018-05-22T22:40:00.945Z",
+                    "updated_at": "2018-05-22T22:40:00.945Z",
+                    "speaker": ""
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/8.json"
+        },
+        {
+            "id": 9,
+            "title": "Pentecost",
+            "subtitle": "",
+            "text": "",
+            "image": "https://oslcarcadia.com/img/appimages/pentacost.jpg",
+            "created_at": "2018-05-22T22:42:28.266Z",
+            "updated_at": "2018-06-14T19:20:04.815Z",
+            "services": [
+                {
+                    "id": 51,
+                    "title": "Right Person  -  Wrong Reason!",
+                    "date": "20180805",
+                    "created_at": "2018-08-03T17:24:33.548Z",
+                    "updated_at": "2018-08-03T17:24:33.548Z",
+                    "speaker": ""
+                },
+                {
+                    "id": 52,
+                    "title": "Instructions For Every Christian To Follow",
+                    "date": "20180812",
+                    "created_at": "2018-08-13T23:07:14.680Z",
+                    "updated_at": "2018-08-13T23:07:14.680Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 53,
+                    "title": "No Turning Back... Living As Children Of Light",
+                    "date": "20180819",
+                    "created_at": "2018-08-20T21:15:43.534Z",
+                    "updated_at": "2018-08-20T21:15:43.534Z",
+                    "speaker": "Vicar Brian Barlow"
+                },
+                {
+                    "id": 40,
+                    "title": "What Does This Mean?",
+                    "date": "20180520",
+                    "created_at": "2018-05-22T22:42:45.497Z",
+                    "updated_at": "2018-05-22T22:42:45.497Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 41,
+                    "title": "Scandelous Freedom",
+                    "date": "20180527",
+                    "created_at": "2018-05-29T19:19:57.518Z",
+                    "updated_at": "2018-05-29T19:19:57.518Z",
+                    "speaker": "Vicar Brian Barlow"
+                },
+                {
+                    "id": 42,
+                    "title": "Treasure in Jars of Clay",
+                    "date": "20180603",
+                    "created_at": "2018-06-11T21:35:11.377Z",
+                    "updated_at": "2018-06-11T21:35:11.377Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 43,
+                    "title": "The Blame Game",
+                    "date": "20180610",
+                    "created_at": "2018-06-11T23:46:34.938Z",
+                    "updated_at": "2018-06-11T23:46:34.938Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 44,
+                    "title": "What to Get For the Perfect Father?",
+                    "date": "20180617",
+                    "created_at": "2018-06-14T19:28:30.430Z",
+                    "updated_at": "2018-06-14T19:28:30.430Z",
+                    "speaker": "Deacon Mark Flath"
+                },
+                {
+                    "id": 45,
+                    "title": "The Lord is Gracious",
+                    "date": "20180624",
+                    "created_at": "2018-06-28T21:19:02.236Z",
+                    "updated_at": "2018-06-28T21:19:02.236Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 46,
+                    "title": "God is Faithful!",
+                    "date": "20180701",
+                    "created_at": "2018-06-28T21:20:35.284Z",
+                    "updated_at": "2018-06-28T21:20:35.284Z",
+                    "speaker": " "
+                },
+                {
+                    "id": 47,
+                    "title": "To God Be The Glory",
+                    "date": "20180708",
+                    "created_at": "2018-07-09T23:21:14.888Z",
+                    "updated_at": "2018-07-09T23:21:14.888Z",
+                    "speaker": "DYFM Jesse Brubaker"
+                },
+                {
+                    "id": 48,
+                    "title": "An Unpopular Message (Messenger)!",
+                    "date": "20180715",
+                    "created_at": "2018-07-14T19:56:57.735Z",
+                    "updated_at": "2018-07-14T19:56:57.735Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 49,
+                    "title": "Shipwrecked – Rescued by Jesus!",
+                    "date": "20180722",
+                    "created_at": "2018-07-26T22:53:22.369Z",
+                    "updated_at": "2018-07-26T22:53:22.369Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 50,
+                    "title": "It’s In There",
+                    "date": "20180729",
+                    "created_at": "2018-07-26T22:53:39.963Z",
+                    "updated_at": "2018-07-26T22:53:39.963Z",
+                    "speaker": "Deacon Michael Powers"
+                },
+                {
+                    "id": 54,
+                    "title": "Who, What... Now What?",
+                    "date": "20180826",
+                    "created_at": "2018-08-27T21:57:30.917Z",
+                    "updated_at": "2018-08-27T21:57:30.917Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 55,
+                    "title": "Are You Ready For Battle",
+                    "date": "20180902",
+                    "created_at": "2018-09-10T20:10:40.533Z",
+                    "updated_at": "2018-09-10T20:10:40.533Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 56,
+                    "title": "Faith Saves and Faith Acts",
+                    "date": "20180909",
+                    "created_at": "2018-09-10T21:26:40.604Z",
+                    "updated_at": "2018-09-10T21:31:19.559Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 57,
+                    "title": "Teach Us to Pray and Believe",
+                    "date": "20180916",
+                    "created_at": "2018-09-17T20:42:49.880Z",
+                    "updated_at": "2018-09-17T20:42:49.880Z",
+                    "speaker": "Pastor Albert Chai"
+                },
+                {
+                    "id": 58,
+                    "title": "Called To Be Humble",
+                    "date": "20180923",
+                    "created_at": "2018-09-24T21:17:21.210Z",
+                    "updated_at": "2018-09-24T21:17:21.210Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 59,
+                    "title": "Rise Above Your Natural Self!",
+                    "date": "20180930",
+                    "created_at": "2018-10-01T20:52:25.414Z",
+                    "updated_at": "2018-10-01T20:52:25.414Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 60,
+                    "title": "What Do You Have to Give?",
+                    "date": "20181007",
+                    "created_at": "2018-10-08T19:51:36.914Z",
+                    "updated_at": "2018-10-08T19:51:36.914Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 61,
+                    "title": "Open Heart Surgery!",
+                    "date": "20181014",
+                    "created_at": "2018-10-15T22:02:02.690Z",
+                    "updated_at": "2018-10-15T22:02:02.690Z",
+                    "speaker": "Deacon Mark Flath"
+                },
+                {
+                    "id": 94,
+                    "title": "Rest Now and Rest Later",
+                    "date": "20181021",
+                    "created_at": "2018-10-22T21:26:01.089Z",
+                    "updated_at": "2018-10-22T21:26:01.089Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 95,
+                    "title": "Now and Later!",
+                    "date": "20181104",
+                    "created_at": "2018-11-05T20:18:50.417Z",
+                    "updated_at": "2018-11-05T20:18:50.417Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 96,
+                    "title": "Trusting God in Scarcity and Abundance",
+                    "date": "20181111",
+                    "created_at": "2018-11-13T23:23:20.553Z",
+                    "updated_at": "2018-11-13T23:23:20.553Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 97,
+                    "title": "“Now That You See, Now What?",
+                    "date": "20181028",
+                    "created_at": "2018-11-19T22:42:09.142Z",
+                    "updated_at": "2018-11-19T22:42:09.142Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 98,
+                    "title": "Last",
+                    "date": "20181125",
+                    "created_at": "2018-11-26T19:14:39.357Z",
+                    "updated_at": "2018-11-26T19:18:10.568Z",
+                    "speaker": "Pastor Mark Demel"
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/9.json"
+        },
+        {
+            "id": 2,
+            "title": "Holiday Recordings",
+            "subtitle": "Christmas and New Year's Eve",
+            "text": "",
+            "image": "https://oslcarcadia.com/img/appimages/holiday.jpg",
+            "created_at": "2018-01-11T23:30:16.390Z",
+            "updated_at": "2018-01-11T23:34:31.323Z",
+            "services": [
+                {
+                    "id": 5,
+                    "title": "New Year's Eve",
+                    "date": "20171231",
+                    "created_at": "2018-01-11T23:30:44.903Z",
+                    "updated_at": "2018-04-30T21:07:41.091Z",
+                    "speaker": "Deacon Michael Powers"
+                },
+                {
+                    "id": 4,
+                    "title": "Christmas Eve",
+                    "date": "20171224",
+                    "created_at": "2018-01-11T23:30:36.909Z",
+                    "updated_at": "2018-04-30T21:07:49.037Z",
+                    "speaker": "Pastor Mark Demel"
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/2.json"
+        },
+        {
+            "id": 1,
+            "title": "Advent-URE",
+            "subtitle": "Three Part Series on Advent",
+            "text": "Pastor Demel speaks on three aspects of Advent: Understand, Return, and Enjoy.",
+            "image": "https://oslcarcadia.com/img/appimages/adventure.jpeg",
+            "created_at": "2018-01-11T21:38:44.990Z",
+            "updated_at": "2018-01-11T23:34:56.507Z",
+            "services": [
+                {
+                    "id": 3,
+                    "title": "Part 3: Enjoy!",
+                    "date": "20171217",
+                    "created_at": "2018-01-11T21:39:35.872Z",
+                    "updated_at": "2018-04-30T21:09:16.073Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 2,
+                    "title": "Part 2: Return",
+                    "date": "20171210",
+                    "created_at": "2018-01-11T21:39:21.044Z",
+                    "updated_at": "2018-04-30T21:09:28.965Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 1,
+                    "title": "Part 1: Understanding",
+                    "date": "20171203",
+                    "created_at": "2018-01-11T21:39:03.039Z",
+                    "updated_at": "2018-04-30T21:09:35.415Z",
+                    "speaker": "Pastor Mark Demel"
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/1.json"
+        },
+        {
+            "id": 3,
+            "title": "January 2018",
+            "subtitle": "",
+            "text": "Check out this month's sermons",
+            "image": "https://oslcarcadia.com/img/appimages/middle.jpg",
+            "created_at": "2018-01-11T23:52:46.832Z",
+            "updated_at": "2018-01-18T22:55:18.864Z",
+            "services": [
+                {
+                    "id": 7,
+                    "title": "The Invitation",
+                    "date": "20180114",
+                    "created_at": "2018-01-18T22:54:49.731Z",
+                    "updated_at": "2018-04-30T21:06:12.449Z",
+                    "speaker": "Deacon Michael Powers"
+                },
+                {
+                    "id": 9,
+                    "title": "What Will You Do With The Story?",
+                    "date": "20180128",
+                    "created_at": "2018-01-31T05:59:32.096Z",
+                    "updated_at": "2018-04-30T21:06:39.089Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 8,
+                    "title": "Every Life Matters",
+                    "date": "20180121",
+                    "created_at": "2018-01-26T18:10:29.646Z",
+                    "updated_at": "2018-04-30T21:06:45.638Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 6,
+                    "title": "Living In The Middle",
+                    "date": "20180107",
+                    "created_at": "2018-01-11T23:53:07.131Z",
+                    "updated_at": "2018-04-30T21:06:53.446Z",
+                    "speaker": "Pastor Mark Demel"
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/3.json"
+        },
+        {
+            "id": 4,
+            "title": "February 2018",
+            "subtitle": "",
+            "text": "This month at OSLC...",
+            "image": "https://oslcarcadia.com/img/appimages/timpanagos.jpg",
+            "created_at": "2018-02-09T23:47:39.241Z",
+            "updated_at": "2018-02-09T23:57:36.452Z",
+            "services": [
+                {
+                    "id": 16,
+                    "title": "The Thrill of Victory and The Agony of Defeat",
+                    "date": "20180225",
+                    "created_at": "2018-03-04T19:15:57.892Z",
+                    "updated_at": "2018-04-30T21:05:15.176Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 12,
+                    "title": "The Journey, The Test of Love",
+                    "date": "20180218",
+                    "created_at": "2018-02-19T21:07:24.536Z",
+                    "updated_at": "2018-04-30T21:05:24.358Z",
+                    "speaker": "Vicar Brian Barlow"
+                },
+                {
+                    "id": 10,
+                    "title": "Where's God?",
+                    "date": "20180204",
+                    "created_at": "2018-02-09T23:47:54.149Z",
+                    "updated_at": "2018-04-30T21:05:31.907Z",
+                    "speaker": "Pastor Mark Demel"
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/4.json"
+        },
+        {
+            "id": 5,
+            "title": "This is What Love Looks Like",
+            "subtitle": "Lenten Series",
+            "text": "",
+            "image": "https://oslcarcadia.com/img/appimages/lent.jpg",
+            "created_at": "2018-02-19T20:20:19.790Z",
+            "updated_at": "2018-02-19T20:55:28.611Z",
+            "services": [
+                {
+                    "id": 25,
+                    "title": "Serving Others",
+                    "date": "20180329",
+                    "created_at": "2018-04-02T22:04:28.013Z",
+                    "updated_at": "2018-04-30T21:01:43.140Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 24,
+                    "title": "The Cross",
+                    "date": "20180330",
+                    "created_at": "2018-04-02T22:04:05.952Z",
+                    "updated_at": "2018-04-30T21:01:49.755Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 22,
+                    "title": "Caring",
+                    "date": "20180321",
+                    "created_at": "2018-03-27T20:56:15.301Z",
+                    "updated_at": "2018-04-30T21:02:02.197Z",
+                    "speaker": "Pastor Albert Chai"
+                },
+                {
+                    "id": 19,
+                    "title": "Forgiveness",
+                    "date": "20180314",
+                    "created_at": "2018-03-18T20:00:34.807Z",
+                    "updated_at": "2018-04-30T21:02:30.019Z",
+                    "speaker": "Vicar Brian Barlow"
+                },
+                {
+                    "id": 23,
+                    "title": "Prayer",
+                    "date": "20180307",
+                    "created_at": "2018-03-27T20:56:53.331Z",
+                    "updated_at": "2018-04-30T21:03:46.618Z",
+                    "speaker": "DYFM Jesse Brubaker"
+                },
+                {
+                    "id": 13,
+                    "title": "Commitment",
+                    "date": "20180221",
+                    "created_at": "2018-03-04T19:14:35.009Z",
+                    "updated_at": "2018-04-30T21:04:13.545Z",
+                    "speaker": "Deacon Michael Powers"
+                },
+                {
+                    "id": 11,
+                    "title": "Following the Commandments",
+                    "date": "20180214",
+                    "created_at": "2018-02-19T20:21:03.729Z",
+                    "updated_at": "2018-04-30T21:04:29.095Z",
+                    "speaker": "Pastor Mark Demel"
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/5.json"
+        },
+        {
+            "id": 6,
+            "title": "March 2018",
+            "subtitle": "",
+            "text": "",
+            "image": "https://oslcarcadia.com/img/appimages/raincross.png",
+            "created_at": "2018-03-15T22:55:59.925Z",
+            "updated_at": "2018-03-15T23:21:09.974Z",
+            "services": [
+                {
+                    "id": 18,
+                    "title": "What's Love Got to Do With It?",
+                    "date": "20180311",
+                    "created_at": "2018-03-15T22:57:17.754Z",
+                    "updated_at": "2018-04-30T21:00:12.947Z",
+                    "speaker": "Deacon Mark Flath"
+                },
+                {
+                    "id": 17,
+                    "title": "The Law is Good",
+                    "date": "20180304",
+                    "created_at": "2018-03-15T22:56:24.729Z",
+                    "updated_at": "2018-04-30T21:00:35.876Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 20,
+                    "title": "Truth for Now, Truth for Eternity",
+                    "date": "20180318",
+                    "created_at": "2018-03-18T20:26:12.242Z",
+                    "updated_at": "2018-04-30T21:00:55.265Z",
+                    "speaker": "Pastor Mark Demel"
+                },
+                {
+                    "id": 21,
+                    "title": "According to the Scriptures",
+                    "date": "20180325",
+                    "created_at": "2018-03-26T21:58:53.194Z",
+                    "updated_at": "2018-04-30T21:01:03.734Z",
+                    "speaker": "Pastor Mark Demel"
+                }
+            ],
+            "url": "https://hidden-brook-22839.herokuapp.com/series/6.json"
+        }
+    ]
+}

@@ -31,9 +31,13 @@ import Search from './Search.js';
 
 import BlogCard from './BlogCard.js';
 
+
+import series from './series.json';
+
 ///////imports\\\\\\\\\
 
-const appType = "sermon";
+// const appType = "music";//recordings
+const appType = "sermon";//sermon
 
 export default class App extends Component {
   constructor(props) {
@@ -47,8 +51,11 @@ export default class App extends Component {
 
       seriesList: [],
       searchList: [],
+      refreshList: false,
 
       search: '',
+
+      currentSelection: null,
 
       show: 3,
 
@@ -68,6 +75,10 @@ export default class App extends Component {
     this.setState({search: input});
   }
 
+  setSelection = (selection) => {
+    this.setState({currentSelection: selection});
+  }
+
   componentDidMount(){
 
     let apiUrl = 'https://hidden-brook-22839.herokuapp.com/series.json';
@@ -85,6 +96,7 @@ export default class App extends Component {
 
       if(appType == "sermon"){
         var seriesData = data.series;
+        // var seriesData = series.series;
         seriesData.sort(this.SortByDate);
   
         var searchList = [];
@@ -126,6 +138,7 @@ export default class App extends Component {
 
   onSearchInput = (input) => {
     this.setState({searchList: input});
+    this.setState({refreshList: true});
   }
 
 
@@ -145,12 +158,17 @@ export default class App extends Component {
         
         if(this.state.seriesList.length != this.state.searchList.length){
           // sermonCards =
+          if( this.state.refreshList == true){
+            this.setState({refreshList: false});
+            cards = null;
+          }else{
           cards =
           this.state.searchList.map((item, index) =>{
              let bulletin = //"http://docs.google.com/gview?url=
                 "https://oslcarcadia.com/bulletins/" + item.date +".pdf";
             return <Col md={{size:8, offset:2}} xs={{size:10, offset:1}}>
                 <ServiceInfo
+                  appType={appType}
                   isOpen={true}
                   title={item.title}
                   speaker={item.speaker}
@@ -161,12 +179,14 @@ export default class App extends Component {
               </Col>
           });
         }
+        }
     
         if(this.state.series != null && this.state.seriesList.length == this.state.searchList.length){
           cards = <div className="container">
            { this.state.series.map((series, i) =>{
                        if(i < this.state.show){
                          return <SermonCard
+                          appType={appType}
                           series={this.state.series}
                           title={this.state.series[i].title}
                           subtitle={this.state.series[i].subtitle}
@@ -183,6 +203,54 @@ export default class App extends Component {
         }
       }
 
+   if(appType == 'music'){
+
+        if(this.state.seriesList.length != this.state.searchList.length){
+          cards =
+          this.state.searchList.map((item, index) =>{
+            return <Col md={{size:8, offset:2}} xs={{size:10, offset:1}} style={{paddingBottom: '5px'}}>
+              <div className="recordingCard">
+                <ServiceInfo
+                  uri={item.title}
+                  appType={appType}
+                  isOpen={true}
+                  title={item.content}
+                  speaker={item.group}
+                  date={item.date}
+                  bulletin={null}
+                  haveBulletin={false}
+                  setSelection={this.setSelection}
+                  />
+                  </div>
+              </Col>
+          });
+        }
+        if(this.state.series != null && this.state.seriesList.length == this.state.searchList.length){
+
+        cards =
+          this.state.series.map((item, index) =>{
+            return <Col md={{size:8, offset:2}} xs={{size:10, offset:1}} style={{paddingBottom: '5px'}}>
+            <div className="recordingCard">
+                <ServiceInfo
+                  uri={item.title}
+                  appType={appType}
+                  isOpen={true}
+                  title={item.content}
+                  speaker={item.group}
+                  date={item.date}
+                  bulletin={null}
+                  haveBulletin={false}
+                  />
+                  </div>
+              </Col>
+          });
+        }
+  
+
+
+  }
+    
+
     let search = null;
     if(this.state.seriesList != null){
       search = <Search
@@ -191,18 +259,31 @@ export default class App extends Component {
                 onSearchInput={(input)=>{this.onSearchInput(input);}}/>;
     }
                 
-      if(this.state.series != null &&
-        this.state.searchList != null
-        && appType == "music"){
-      cards=
-        this.state.searchList.map((recording, i) => 
+      // if(this.state.series != null &&
+      //   this.state.searchList != null
+      //   && appType == "music"){
+      // cards=
+      //   this.state.searchList.map((recording, i) => 
                 
-              <Col xs={{size:10, offset:1}} className="card-container">
-                <BlogCard recording={recording}/>
-              </Col>
+      //         <Col xs={{size:10, offset:1}} className="card-container">
+               
+
+      //           <ServiceInfo
+      //             recording={recording}
+      //             isOpen={true}
+      //             title={recording.content}
+      //             speaker={recording.group}
+      //             date={recording.date}
+      //             appType={appType}
+      //             bulletin={null}
+      //             haveBulletin={false}
+      //             />
+              
+
+      //         </Col>
            
-        );
-      }
+      //   );
+      // }
 
 
 
@@ -211,6 +292,9 @@ export default class App extends Component {
     if(appType == "music"){
       title = "Recordings";
     }
+
+    let recording  = this.state.currentSelection;
+
 
 
     return (
@@ -226,6 +310,9 @@ export default class App extends Component {
               
               <Col xs={{size:8, offset:2}} md={{size:3, offset:0}}>
               {search}
+              </Col>
+              <Col xs={{size:8, offset:2}} md={{size:3, offset:0}}>
+              {recording}
               </Col>
 
             </Row>

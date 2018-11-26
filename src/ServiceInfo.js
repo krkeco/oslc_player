@@ -38,6 +38,10 @@ export default class ServiceInfo extends Component {
       sermon: true,
       serviceSound: null,
       sermonSound: null,
+
+      play: false,
+
+      newProps: true,
     };
 
    // this.parseDate = this.parseDate.bind(this);
@@ -63,25 +67,57 @@ export default class ServiceInfo extends Component {
   // if(this.verifyURL("https://oslcarcadia.com/sermons/"+this.props.date +"_sermon.mp3")){
   //   this.setState({sermon: true});
   // }
+    this.loadAudio();
+  }
 
-  let serviceSound = new Audio(); 
-  serviceSound.onerror = () => { this.setState({service: false});};
-  //alert("error");}; 
-  serviceSound.src = "https://oslcarcadia.com/sermons/"+this.props.date+"_service.mp3";
-  this.setState({serviceSound: serviceSound.src});
-  
-  let sermonSound = new Audio(); 
-  sermonSound.onerror = () => { this.setState({sermon: false});};
-  //alert("error");}; 
-  sermonSound.src = "https://oslcarcadia.com/sermons/"+this.props.date+"_sermon.mp3";
-  this.setState({sermonSound: sermonSound.src});
-  
-  let bulletin = document.createElement('iframe');
-  bulletin.onerror = () => { this.setState({bulletin: false});};
-  //alert("error");}; 
-  bulletin.src = this.props.bulletin;
-  this.setState({bulletin: bulletin.src});
-  
+  componentWillReceiveProps(){
+    this.setState({newProps: true});
+    this.loadAudio();
+  }
+
+  loadAudio = () => {
+    if(this.refs.service != undefined){
+        if(this.props.appType == 'sermon'){
+        
+          let serviceSound = new Audio(); 
+          serviceSound.onerror = () => { this.setState({service: false});};
+          //alert("error");}; 
+          serviceSound.src = "https://oslcarcadia.com/sermons/"+this.props.date+"_service.mp3";
+          serviceSound.preload = "metadata";
+          this.setState({serviceSound: serviceSound.src}
+          );    
+          
+          let sermonSound = new Audio(); 
+          sermonSound.onerror = () => { this.setState({sermon: false});};
+          //alert("error");}; 
+          sermonSound.src = "https://oslcarcadia.com/sermons/"+this.props.date+"_sermon.mp3";
+          sermonSound.preload = "metadata";
+          this.setState({sermonSound: sermonSound.src}
+          );
+          
+          // let bulletin = document.createElement('iframe');
+          // bulletin.onerror = () => { this.setState({bulletin: false});};
+          // //alert("error");}; 
+          // bulletin.src = this.props.bulletin;
+          // this.setState({bulletin: bulletin.src});
+        
+        }
+    
+        if(this.props.appType =='music'){
+          let serviceSound = new Audio(); 
+          serviceSound.onerror = () => { this.setState({service: false});};
+          serviceSound.src = "http://music.oslcarcadia.com/recordings/"+this.props.date+"_"+this.props.uri +".mp3";
+          serviceSound.preload = "metadata";
+          this.setState({serviceSound: serviceSound.src},
+            () => {this.refs.service.pause();
+                    this.refs.service.load();
+                    });
+    
+        
+        }
+    
+    }
+
   }
 
   parseDate = (date) => {
@@ -120,6 +156,7 @@ return false;
 
   render() {
 
+
     let bulletinButton = null;
     if(this.props.date >= 20180520
       && this.props.haveBulletin){
@@ -133,22 +170,42 @@ return false;
   
     
     if(this.state.service){
+      let serviceUrl = null;
+      if(this.state.serviceSound != null){
+        serviceUrl = this.state.serviceSound;
+      }
+      let serviceTitle = <br/>;
+      if(this.props.appType == "sermon"){
+        serviceTitle = <p className="small-font">Worship Service:</p>;
+      }
       service = <div>
-        <p className="small-font">Worship Service:</p>
-        <audio controls preload="none" className="audio">
+        {serviceTitle}
+        <audio ref="service" controls preload="metadata" className="audio"
+        onplay={() => {this.setState({play: true})}}>
           <source src={this.state.serviceSound} type="audio/mpeg"/>
         </audio>
       </div>;
     }
     
-    if(this.state.sermon){
+    if(this.state.sermon && this.props.appType == "sermon"){
       sermon = <div >
         <p className="small-font">Sermon only:</p>
 
-        <audio controls preload="none" className="audio">
+        <audio ref="sermon" controls preload="metadata" className="audio">
           <source src={this.state.sermonSound} type="audio/mpeg"/>
         </audio>
       </div>;
+    }
+
+
+    if(this.state.newProps){
+        this.setState({newProps: false});
+        this.loadAudio();
+    }
+
+    if(this.state.play){
+      this.setState({play: !this.state.play},
+      this.props.setSelection(service));
     }
 
     return (
@@ -174,18 +231,9 @@ return false;
          {service}
          {sermon}
           <br/>
+         {bulletinButton}
         </div>
       
-        <Collapse isOpen={!this.state.bulletin_toggle}>
-         {bulletinButton}
-        </Collapse>
-
-        <Collapse isOpen={this.state.bulletin_toggle} >
-          <Button onClick={this.bulletinToggle}>Click to Collapse</Button>
-          <iframe src={this.props.bulletin} className="bulletin" frameborder="0"></iframe>
-          <Button onClick={this.bulletinToggle}>Click to Collapse</Button>
-        </Collapse>
-
         <br/>
         <br/>
         <br/>
