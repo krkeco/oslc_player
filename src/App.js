@@ -64,7 +64,7 @@ export default class App extends Component {
    // this.SortByDateString = this.SortByDateString.bind(this);
   }
 
-  SortByDate = (a, b) => {
+  SortSeriesByDate = (a, b) => {
         return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
     }
   SortByDateString = (a, b) => {
@@ -97,7 +97,7 @@ export default class App extends Component {
       if(appType == "sermon"){
         var seriesData = data.series;
         // var seriesData = series.series;
-        seriesData.sort(this.SortByDate);
+        seriesData.sort(this.SortSeriesByDate);
   
         var searchList = [];
   
@@ -206,6 +206,12 @@ export default class App extends Component {
    if(appType == 'music'){
 
         if(this.state.seriesList.length != this.state.searchList.length){
+          
+          if( this.state.refreshList == true){
+            this.setState({refreshList: false});
+            cards = null;
+          }else{
+
           cards =
           this.state.searchList.map((item, index) =>{
             return <Col md={{size:8, offset:2}} xs={{size:10, offset:1}} style={{paddingBottom: '5px'}}>
@@ -224,6 +230,7 @@ export default class App extends Component {
                   </div>
               </Col>
           });
+        }
         }
         if(this.state.series != null && this.state.seriesList.length == this.state.searchList.length){
 

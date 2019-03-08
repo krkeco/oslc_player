@@ -78,20 +78,20 @@ export default class SermonCard extends Component {
       const { pageNumber, numPages } = this.state;
  
 
-  const componentClasses = ['example-component'];
+  const componentClasses = ['series-image'];
   if (this.state.collapse_toggle) { componentClasses.push('show'); }
   
 
     let card =
      <Card className="bg-card">
-      <CardBody>
+      <CardBody style={{minHeight: '75vh'}}> 
       <div onClick={this.collapseToggle}>
         <CardTitle>{this.props.title}</CardTitle>
         <CardSubtitle>{this.props.subtitle}</CardSubtitle>
         <img  src={this.props.image} className={componentClasses.join(' ')} alt="Card image cap" />
       
         <CardText>{this.props.text}</CardText>
-        </div>
+      </div>
 
         <Collapse isOpen={this.state.collapse_toggle} >
       

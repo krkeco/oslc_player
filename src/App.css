@@ -150,10 +150,10 @@
 .card-image{
 }
 
-.example-component {
-  width: 35vw;
-  height:35vw;
-  border-radius:1em;
+.series-image {
+  width: 60vw;
+  height:25vw;
+  border-radius:1vw;
   opacity: 1;
 
   -webkit-transition: 0.7s;
@@ -161,10 +161,13 @@
   -o-transition: 0.7s;
   transition: 0.7s;
 }
-.example-component.show {
-  width: 15em;
-  height:15em;
-  border-radius:1em;
+.series-image.show {
+  width: 100%;
+  
+  -webkit-filter: blur(4px);
+  filter: blur(4px);
+  
+  height:10vw;
   opacity: 1;
 
   -webkit-transition: 0.7s;
@@ -172,6 +175,7 @@
   -o-transition: 0.7s;
   transition: 0.7s;
 }
+
 .bulletin{
   display: 'absolute';
   align: 'center';
