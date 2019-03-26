@@ -186,7 +186,7 @@
 .service-info-subtitle{
   font-family: raleway;
   font-size: 20px;
-  color: white;
+  color: var(--main-gray);
 }
 .sermon-card{
   visibility: visible;

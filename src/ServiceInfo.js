@@ -212,6 +212,8 @@ return false;
 
       <div >
 
+        <br/>
+        <br/>
         <div onClick={this.collapseToggle}>
           <Row>
             <Col xs="12">
@@ -234,8 +236,6 @@ return false;
          {bulletinButton}
         </div>
       
-        <br/>
-        <br/>
         <br/>
         <br/>
       </div>
